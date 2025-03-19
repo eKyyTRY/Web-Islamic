@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Warna */
+:root {
+    --primary: #166534;
+    --gold: #d4af37;
+}
+
+/* Parallax Effect */
+.parallax {
+    background-image: url('img/background.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Hover Efek */
+a:hover {
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+    /* Animasi Slow Spin */
+    @keyframes spin-slow {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+    }
+    .animate-spin-slow {
+        animation: spin-slow 20s linear infinite;
+    }
+
+    /* Animasi Reverse Spin */
+    @keyframes spin-reverse {
+        from { transform: rotate(360deg); }
+        to { transform: rotate(0deg); }
+    }
+    .animate-spin-reverse {
+        animation: spin-reverse 25s linear infinite;
+    }
+
+    /* Animasi Floating */
+    @keyframes floating {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+    }
+    .animate-floating {
+        animation: floating 5s ease-in-out infinite;
+    }
+
+    @keyframes floating-reverse {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(10px); }
+    }
+    .animate-floating-reverse {
+        animation: floating-reverse 5s ease-in-out infinite;
+    }
+
+    /* Animasi Fade In */
+    @keyframes fade-in {
+        from { opacity: 0; transform: translateY(-20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-in {
+        animation: fade-in 1.5s ease-out;
+    }
+    .animate-fade-in-delayed {
+        animation: fade-in 2s ease-out;
+    }
+
+    /* Animasi Glowing */
+    @keyframes glow {
+        0% { box-shadow: 0 0 5px rgba(255, 215, 0, 0.6); }
+        50% { box-shadow: 0 0 20px rgba(255, 215, 0, 1); }
+        100% { box-shadow: 0 0 5px rgba(255, 215, 0, 0.6); }
+    }
+    .animate-glow {
+        animation: glow 3s infinite ease-in-out;
+    }
+
+      /* Animasi hover pada card */
+      .hover-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .hover-card:hover {
+        transform: translateY(-8px) scale(1.05); /* Membuat kartu naik & membesar */
+        box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15); /* Efek shadow saat hover */
+    }
+
+    /* Garis bawah yang muncul */
+    .hover-card::after {
+        content: "";
+        display: block;
+        width: 0;
+        height: 4px;
+        background: linear-gradient(to right, #ff9f1c, #ff2e63);
+        transition: width 0.3s ease-in-out;
+        margin: 6px auto 0;
+        border-radius: 3px;
+    }
+
+    .hover-card:hover::after {
+        width: 100%;
+    }
+
+    /* Animasi ikon saat hover */
+    .hover-card:hover .hover-icon {
+        transform: rotate(8deg);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    @keyframes fadeSlide {
+        0% { opacity: 0; transform: translateY(-20px); }
+        100% { opacity: 1; transform: translateY(0); }
+      }
+      
+      @keyframes fadeInSlow {
+        0% { opacity: 0; }
+        100% { opacity: 1; }
+      }
+      
+      @keyframes fadeUp {
+        0% { opacity: 0; transform: translateY(20px); }
+        100% { opacity: 1; transform: translateY(0); }
+      }
+      
+      /* Tambahkan ke Tailwind jika pakai Tailwind Config */
+      @layer utilities {
+        .animate-fade-slide { animation: fadeSlide 1s ease-out forwards; }
+        .animate-fade-in-slow { animation: fadeInSlow 1.2s ease-out forwards; }
+        .animate-fade-up { animation: fadeUp 1s ease-out forwards; }
+      }
+
+    @keyframes floating {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+        100% { transform: translateY(0px); }
+    }
+    
+    .animate-floating {
+        animation: floating 3s ease-in-out infinite;
+    }
+    
+    .animate-floating-reverse {
+        animation: floating 3s ease-in-out infinite reverse;
+    }
+    
+    @keyframes fade-in {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slide-up {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes spin-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.animate-fade-in { animation: fade-in 1s ease-out forwards; }
+.animate-slide-up { animation: slide-up 1s ease-out forwards 0.5s; }
+.animate-spin-slow { animation: spin-slow 20s linear infinite; }
+
+.slide-up {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
